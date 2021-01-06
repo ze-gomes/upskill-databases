@@ -1,0 +1,31 @@
+Exercicio 1
+
+SELECT COUNT(*) FROM livro;
+
+SELECT MIN(ano) FROM livro;
+
+SELECT MAX(ano) FROM livro;
+
+SELECT COUNT(*) FROM livro WHERE ano = 2003;
+
+SELECT COUNT(*) FROM livro WHERE ano <= 2000 AND ano >=1901;
+
+Exercicio 2
+
+SELECT COUNT(Ano) AS total_Livros, ano
+FROM livro
+GROUP BY ano
+ORDER BY ano DESC;
+
+SELECT COUNT(Ano) AS total_Livros, ano
+FROM livro
+GROUP BY ano
+HAVING total_Livros > 3
+ORDER BY ano DESC;
+
+SELECT COUNT(Ano) AS total_Livros, ano, Editora
+FROM livro
+WHERE Editora = "Dom Quixote"
+GROUP BY Ano
+HAVING total_Livros = 1
+ORDER BY ano DESC;
